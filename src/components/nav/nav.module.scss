@@ -1,0 +1,22 @@
+.nav {
+    height: 60px;
+    background-color: #3fb8fd;
+    &__body {
+        margin: 0 auto;
+        max-width: 1170px;
+        padding: 0 10px;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        list-style: none;
+    }
+    &__li {
+        font-size: 18px;
+        margin: 0 20px;
+        cursor: pointer;
+        text-decoration: none;
+        color: #fff;
+    }
+}
+
