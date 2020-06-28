@@ -1,0 +1,392 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  background-image: url(./Assets/bg6.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+/*----------GENERAL----------*/
+
+.app {
+  width: 100%;
+  min-height: 100vh;
+  background-color: rgba(0, 0, 0, 0.3);
+  position: relative;
+}
+
+/*----------HEADER----------*/
+
+.header {
+  height: 150px;
+  background-color: rgba(129, 203, 249, 0.2);
+  box-shadow: 0 0 10px #81cbf9, 0 0 50px #237db5;
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.header h1 {
+  text-align: center;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 50px;
+  color: #fff;
+  font-weight: bold;
+  margin-top: -30px;
+}
+
+.header .header_authorization {
+  width: 300px;
+  height: 40px;
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.header_authorization ul {
+  height: 100%;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  list-style: none;
+}
+
+.header_authorization ul li {
+  font-size: 24px;
+  font-weight: bold;
+  color: #fff;
+  cursor: pointer;
+}
+
+.header_authorization ul li:hover {
+  text-decoration: underline;
+}
+
+/*----------NOTES----------*/
+
+.notes {
+  padding: 0 10px 80px;
+}
+
+/*----------NOTE----------*/
+
+.note {
+  max-width: 500px;
+  min-height: 150px;
+  background-color: #0d669d;
+  margin: 0 auto 20px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  font-style: italic;
+  color: #fff;
+  opacity: 0;
+  transform: scale(.8);
+  animation: showNote .5s forwards;
+}
+
+.note:last-child {
+  margin-bottom: 0;
+}
+
+.note .delNote {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  cursor: pointer;
+  font-style: normal;
+  transition: .1s;
+  color: #fff;
+}
+
+.note .delNote:hover {
+  font-weight: bold;
+}
+
+@keyframes showNote {
+  from {
+    opacity: 0;
+    transform: scale(.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/*----------ADD-NOTES----------*/
+
+.addNotes {
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  height: 50px;
+  width: 100%;
+  transform: translateX(-50%);
+  background-color: #002d4a;
+  overflow: hidden;
+  box-shadow: 0 0 10px #0d669d, 0 0 30px #81cbf9;
+  z-index: 1;
+}
+
+.addNotes > div {
+  max-width: 500px;
+  height: 100%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  position: relative;
+  /* border: 1px solid #fff; */
+}
+
+.addNotes div input {
+  font-size: 20px;
+  padding: 0 55px 0 20px;
+  outline: none;
+  border: none;
+  color: #fff;
+  font-style: italic;
+  background-color: #b0e1ff;
+  border-radius: 30px 30px 30px 30px;
+  box-shadow: inset 0 0 20px #008be1;
+}
+
+.addNotes div input:focus {
+  background-color: #81cbf9;
+}
+
+.addNotes div input::placeholder {
+  color: #fff;
+}
+
+.addNotes div .addBtn {
+  cursor: pointer;
+  font-size: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  transition: .2s;
+  width: 43px;
+  height: 43px;
+  background-color: #27a1ed;
+  border-radius: 50%;
+  position: absolute;
+  right: 0;
+  top: 0px;
+  border: 3px solid #fff;
+}
+
+.addNotes div .addBtn:active {
+  color: #27a1ed;
+  background-color: #fff;
+}
+
+.addNotes div .addBtn span {
+  margin-top: -7px;
+}
+
+/*----------FORM----------*/
+
+.form_bg {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.6);
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: .5s;
+  visibility: hidden;
+}
+
+.close_form,
+.close_account {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  cursor: pointer;
+}
+
+.close_form:hover div {
+  background-color: #81cbf9;
+}
+
+.close_form div,
+.close_account div {
+  width: 45px;
+  height: 3px;
+  background-color: #fff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: .2s;
+}
+.close_form div:nth-child(1),
+.close_account div:nth-child(1) {
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+.close_form div:nth-child(2),
+.close_account div:nth-child(2) {
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+.form_bg.active {
+  left: 0;
+  top: 0;
+  opacity: 1;
+  visibility: visible;
+}
+
+.form {
+  min-width: 450px;
+  height: 450px;
+  position: relative;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.forms_holder {
+  height: 100%;
+  width: 900px;
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: .5s;
+}
+
+.form_header {
+  height: 120px;
+  width: 100%;
+  background-color: #81cbf9;
+  margin-bottom: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form_title {
+  color: #fff;
+}
+
+.forms_holder input {
+  display: block;
+  margin: 0 auto;
+  height: 40px;
+  width: 70%;
+  margin-bottom: 15px;
+  padding: 0 15px;
+  outline: none;
+  border: 3px solid #81cbf9;
+}
+
+.forms_holder input:focus {
+  background-color: #f0f9ff;
+}
+
+.form_item {
+  width: 450px;
+  height: 450px;
+  border-radius: 50%;
+  overflow: hidden;
+  background-color: #fff;
+}
+
+.form_item .form_btn {
+  margin: 40px auto 20px auto;
+  width: 130px;
+  height: 40px;
+  text-align: center;
+  background-color: #fff;
+  border: 3px solid #81cbf9;
+  display: flex;
+  color: #81cbf9;
+  font-weight: bold;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: .2s;
+}
+
+.form_item .form_btn:hover {
+  background-color: #81cbf9;
+  color: #fff;
+}
+
+.switch_forms {
+  text-align: center;
+  color: #000;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.switch_forms:hover {
+  color: #81cbf9;
+  text-decoration: underline;
+}
+
+/*----------ACCOUNT PAGE----------*/
+
+.account_page {
+  min-width: 100vw;
+  min-height: 100vh;
+  position: fixed;
+  background-color: rgba(129, 203, 249, 0.85);
+  z-index: 3;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+}
+
+.close_account:hover div {
+  background-color: #000;
+}
+
+.account_page .account_title {
+  text-align: center;
+  font-size: 50px;
+}
+
+.account_page .account_details {
+  padding: 0 20px;
+  text-align: center;
+  font-size: 25px;
+  line-height: 45px;
+}
+
+.account_page .account_chart {
+  width: 80%;
+  height: 200px;
+  background-color: rgba(255, 166, 0, 0.4);
+  border-radius: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 25px;
+  color: #fff;
+}
+
+
+
