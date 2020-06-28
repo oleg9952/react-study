@@ -1,0 +1,148 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  background-image: url(./Assets/bg2.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+/*----------GENERAL----------*/
+
+.app {
+  width: 100%;
+  min-height: 100vh;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+/*----------HEADER----------*/
+
+.header {
+  height: 150px;
+  background-color: rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 10px #000;
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header h1 {
+  text-align: center;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 50px;
+  color: bisque;
+  font-weight: bold;
+}
+
+/*----------NOTES----------*/
+
+.notes {
+  padding: 0 10px 80px;
+}
+
+/*----------NOTE----------*/
+
+.note {
+  max-width: 500px;
+  min-height: 150px;
+  background-color: rgba(255, 228, 196, 0.75);
+  margin: 0 auto 20px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  font-style: italic;
+  color: #000;
+}
+
+.note:last-child {
+  margin-bottom: 0;
+}
+
+.note .delNote {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  cursor: pointer;
+  font-style: normal;
+  transition: .1s;
+  color: #000;
+}
+
+.note .delNote:hover {
+  font-weight: bold;
+}
+
+/*----------ADD-NOTES----------*/
+
+.addNotes {
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  height: 50px;
+  width: 100%;
+  transform: translateX(-50%);
+  background-color: #000000;
+  overflow: hidden;
+  box-shadow: 0 0 10px #000;
+}
+
+.addNotes > div {
+  max-width: 500px;
+  height: 100%;
+  border: 1px solid black;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  position: relative;
+  /* border: 1px solid #fff; */
+}
+
+.addNotes div input {
+  font-size: 20px;
+  padding: 0 55px 0 20px;
+  outline: none;
+  border: none;
+  color: #000;
+  font-style: italic;
+  background-color: #edbd7d;
+  border-radius: 30px 30px 30px 30px;
+}
+
+.addNotes div input:focus {
+  background-color: #fae0bf;
+}
+
+.addNotes div input::placeholder {
+  color: #9f9f9f;
+}
+
+.addNotes div .addBtn {
+  cursor: pointer;
+  font-size: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  transition: .2s;
+  width: 50px;
+  height: 50px;
+  background-color: #f74d04;
+  border-radius: 50%;
+  position: absolute;
+  right: 0;
+}
+
+.addNotes div .addBtn:active {
+  color: #000;
+}
+
+.addNotes div .addBtn span {
+  margin-top: -7px;
+}
