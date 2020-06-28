@@ -1,0 +1,64 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  padding-top: 10px;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.posts {
+  width: 1170px;
+  margin: 0 auto;
+  min-height: 200px;
+  padding-bottom: 20px;
+}
+
+.cards_holder {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 20px;
+}
+
+.card {
+  min-height: 100px;
+  box-shadow: 0 0 5px #000;
+  padding: 10px;
+  text-align: center; 
+  border-radius: 10px;
+}
+
+.card a {
+  color: #000;
+  text-decoration: none;
+}
+
+.pagination {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  list-style: none;
+  width: 500px;
+  margin: 0 auto 20px;
+  box-shadow: 0 0 5px #000;
+}
+
+.pagination li {
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.post_details {
+  text-align: center;
+  font-style: italic;
+}
+
+.post_page_title {
+  text-transform: capitalize;
+}
