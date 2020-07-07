@@ -7,6 +7,9 @@
 5. [Notes-Taking App || Hooks](https://github.com/oleg9952/react-study/tree/project_5)
 6. [Render Props](https://github.com/oleg9952/react-study/tree/project_6)
 7. **HOC**
+8. [MobX || Todo](https://github.com/oleg9952/react-study/tree/project_8)
+9. [Unit testing || react-testing-library](https://github.com/oleg9952/react-study/tree/project_9)
+10. [Unit testing || enzyme](https://github.com/oleg9952/react-study/tree/project_10)
 ------------
 *This pattern is used for reusing the same logic (state, methods) in several components without re-creating it over and over again.*
 - Higher Order Component
