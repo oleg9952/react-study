@@ -1,26 +1,26 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import './App.scss';
+import { useAppContext } from './mobx/appContext';
+import { useObserver } from 'mobx-react'
+import Form from './components/Form';
+import Todo from './components/Todo';
 
 function App() {
-  return (
+  const store = useAppContext();
+  return useObserver(() => (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Form />
+      <div className="todos">
+        { 
+          store.todos.length ? 
+          store.todos.map(todo => (
+            <Todo todo={todo} key={todo.id} />
+          )) : <p>No todos...</p>
+        }
+      </div>
+      
     </div>
-  );
+  ));
 }
 
 export default App;

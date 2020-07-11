@@ -8,6 +8,10 @@
 6. [Render Props](https://github.com/oleg9952/react-study/tree/project_6)
 7. [HOC](https://github.com/oleg9952/react-study/tree/project_7)
 8. **MobX || Todo**
+9. [Unit testing || react-testing-library](https://github.com/oleg9952/react-study/tree/project_9)
+10. [Unit testing || enzyme](https://github.com/oleg9952/react-study/tree/project_10)
 ------------
 *MobX - state management library*
 
+installation:
+`npm i mobx mobx-react`
