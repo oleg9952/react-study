@@ -8,5 +8,6 @@
 6. [Render Props](https://github.com/oleg9952/react-study/tree/project_6)
 7. [HOC](https://github.com/oleg9952/react-study/tree/project_7)
 8. [MobX || Todo](https://github.com/oleg9952/react-study/tree/project_8)
-9. **Jest || Unit Testing**
+9. **Unit testing || react-testing-library**
+10. [Unit testing || enzyme](https://github.com/oleg9952/react-study/tree/project_10)
 ------------
