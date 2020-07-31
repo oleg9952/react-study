@@ -14,8 +14,7 @@ export class Counter extends Component {
         const { counter, error } = this.state;
 
         return (
-            <div data-test="component-counter" className={styles.counter}
-            >
+            <div data-test="component-counter" className={styles.counter}>
                 <h1 data-test="counter-output">Counter: { counter }</h1>
                 { error && <p data-test="decrement-error">Counter can't be below 0</p> }
                 <button data-test="increment-btn" onClick={() => {
